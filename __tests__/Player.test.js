@@ -67,8 +67,37 @@ test('checks if health is depleted', () => {
     expect(player.health).toBe(0)
 })
 
+test("get's players attack value", () => {
+    const player = new Player('Dave');
+    player.strength = 10
+
+    expect(player.getAttackValue()).toBeGreaterThanOrEqual(5);
+    expect(player.getAttackValue()).toBeLessThanOrEqual(15);
+})
+
+test('check if a potion was added correctly', () => {
+    const player = new Player('Dave');
+    const oldCount = player.inventory.length;
+
+    player.addPotion(new Potion());
+
+    expect(player.inventory.length).toBeGreaterThan(oldCount)
+})
+
+
+test('check that usePotion() adds health and removes a potion from inventory', () => {
+    const player = new Player('Dave');
+    player.inventory = [new Potion(), new Potion(), new Potion()];
+    const oldCount = player.inventory.length
+
+    player.usePotion(1);
+
+    expect(player.inventory.length).toBeLessThan(oldCount)
+})
+
 // We create a new player every test so that we can test in isolation
 
+// specificity gives tests more value and actionable feedback
 // When you run npm run test, it will run all files within the __tests__ directory and any other .test files throughout the project.
 // If you only want to run a particular group of related tests (known as a test suite), you can modify the npm run command as shown here:
 
