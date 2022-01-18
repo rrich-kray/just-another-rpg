@@ -4,7 +4,7 @@ TDD is a software development practice in which a developer creates failing test
 
 Writing tests ensures you don't write any more code than you need
 
-You write the text, which will fail, then write just enough code to pass the test, then refactor the code to improve it
+You write the test, which will fail, then write just enough code to pass the test, then refactor the code to improve it
 
 Helps write maintainable code, gives you peace of mind
 
