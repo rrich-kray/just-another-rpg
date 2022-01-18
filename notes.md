@@ -11,3 +11,5 @@ Helps write maintainable code, gives you peace of mind
 npm scripts allow us to add short snippets that we want our project to run at different stages during the build that we would otherwise run from the command line.
 
 use the *.test.js naming convention because this is what Jest expects.
+
+As we move forward, any time you write a test, make sure that it fails before you start writing the corresponding method, even if you're not explicitly directed to do so. A test that passes before you've written the corresponding code means the test wasn't written properly!
